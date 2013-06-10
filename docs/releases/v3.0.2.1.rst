@@ -1,0 +1,7 @@
+What's new in Tornado 3.0.2.1
+===========================
+
+Jun 10, 2013
+-----------
+
+* make get_arguments() backwards compatible to ignore query strings key/value pairs where the value is empty.
