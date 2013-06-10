@@ -236,7 +236,7 @@ def parse_body_arguments(content_type, body, arguments, files):
     with the parsed contents.
     """
     if content_type.startswith("application/x-www-form-urlencoded"):
-        uri_arguments = parse_qs_bytes(native_str(body), keep_blank_values=True)
+        uri_arguments = parse_qs_bytes(native_str(body), keep_blank_values=False)
         for name, values in uri_arguments.items():
             if values:
                 arguments.setdefault(name, []).extend(values)

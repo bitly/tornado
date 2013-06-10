@@ -316,12 +316,12 @@ class HTTPServerTest(AsyncHTTPTestCase):
     def test_empty_query_string(self):
         response = self.fetch("/echo?foo=&foo=")
         data = json_decode(response.body)
-        self.assertEqual(data, {u("foo"): [u(""), u("")]})
+        self.assertEqual(data, {})
 
     def test_empty_post_parameters(self):
         response = self.fetch("/echo", method="POST", body="foo=&bar=")
         data = json_decode(response.body)
-        self.assertEqual(data, {u("foo"): [u("")], u("bar"): [u("")]})
+        self.assertEqual(data, {})
 
     def test_types(self):
         headers = {"Cookie": "foo=bar"}

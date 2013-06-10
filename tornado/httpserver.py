@@ -445,7 +445,7 @@ class HTTPRequest(object):
         self._finish_time = None
 
         self.path, sep, self.query = uri.partition('?')
-        self.arguments = parse_qs_bytes(self.query, keep_blank_values=True)
+        self.arguments = parse_qs_bytes(self.query, keep_blank_values=False)
 
     def supports_http_1_1(self):
         """Returns True if this request supports HTTP/1.1 semantics"""

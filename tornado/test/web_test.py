@@ -621,7 +621,7 @@ js_embed()
         response = self.fetch("/get_argument?foo=bar")
         self.assertEqual(response.body, b"bar")
         response = self.fetch("/get_argument?foo=")
-        self.assertEqual(response.body, b"")
+        self.assertEqual(response.body, b"default")
         response = self.fetch("/get_argument")
         self.assertEqual(response.body, b"default")
 
